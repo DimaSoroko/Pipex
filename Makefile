@@ -105,11 +105,11 @@ $(NAME):	$(OBJS)
 			@echo $(BGreen)To Use Pipex:$(On_IRed)./pipex infile \"command_1\" \"command_2\" outfile$(Color_Off);
 
 clean: 																					# remove all .o
-			@$(RM) @$(OBJS) libft/*.o infile outfile
+			@$(RM) $(OBJS) libft/*.o infile outfile
 			@echo $(BGreen)√ Clean Succeeded, All The '.o' Has Been Removed!$(Color_Off);
 														         
 fclean: clean                            												# force remove NAME
-			@$(RM) @$(NAME) libft/*.o infile outfile
+			@$(RM) $(NAME) libft/*.o infile outfile
 			@echo $(BGreen)√ Fclean Succeeded, Everything Has Been Removed!$(Color_Off);
 
 
