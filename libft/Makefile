@@ -97,7 +97,7 @@ OBJS	   		 = $(SOURCES:.c=.o)       	 										# trasnforms all the ".c" files 
 		
 $(NAME):	$(OBJS)                                                                      
 			@$(LIBC) $(NAME) $(OBJS)
-			@echo $(BGreen)Libft Has Been Compiled!$(Color_Off);
+			@echo $(BGreen)√ Libft Has Been Compiled!$(Color_Off);
 
 all:	    $(NAME)
 

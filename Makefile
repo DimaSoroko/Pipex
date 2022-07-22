@@ -96,25 +96,25 @@ all:	    $(NAME)   																	# will execute NAME rule
 		
 $(NAME):	$(OBJS)
 			$(NORM) 
-			@echo $(BGreen)Norm is OK!$(Color_Off);
+			@echo $(BGreen)√ Norm is OK!$(Color_Off);
 			@$(LIBFT)
 			@touch infile
-			@echo $(BGreen)Infile Has Beed Created!$(Color_Off);
+			@echo $(BGreen)√ Infile Has Beed Created!$(Color_Off);
 			 @$(CC) $(OBJS) ./libft/libft.a -o $(NAME)
-			@echo $(BGreen)Pipex Has Been Compiled!$(Color_Off);
+			@echo $(BGreen)√ Pipex Has Been Compiled!$(Color_Off);
 			@echo $(BGreen)To Use Pipex:$(On_IRed)./pipex infile \"command_1\" \"command_2\" outfile$(Color_Off);
 
 clean: 																					# remove all .o
-			$(RM) $(OBJS) infile outfile
-			@echo $(BGreen)Clean Succeeded, All The '.o' Has Been Removed!$(Color_Off);
+			@$(RM) @$(OBJS) libft/*.o infile outfile
+			@echo $(BGreen)√ Clean Succeeded, All The '.o' Has Been Removed!$(Color_Off);
 														         
 fclean: clean                            												# force remove NAME
-			$(RM) $(NAME) ./libft/*.o infile outfile
-			@echo $(BGreen)Fclean Succeeded, Everything Has Been Removed!$(Color_Off);
+			@$(RM) @$(NAME) libft/*.o infile outfile
+			@echo $(BGreen)√ Fclean Succeeded, Everything Has Been Removed!$(Color_Off);
 
 
-re: fclean all																			# rule to recompile MAKEFILE (will remove everything and allows to recompile again)
-			@echo $(BGreen)Recompile Succeeded!$(Color_Off);	
+re: fclean all 																			# rule to recompile MAKEFILE (will remove everything and allows to recompile again)
+			@echo $(BGreen)√ Recompile Succeeded!$(Color_Off);	
 
 # ----------------------------------------------------------------------PHONY --------------------------------------------------------------------------------------------
 
