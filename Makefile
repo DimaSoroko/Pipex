@@ -109,7 +109,7 @@ clean: 																					# remove all .o
 			@echo $(BGreen)√ Clean Succeeded, All The '.o' Has Been Removed!$(Color_Off);
 														         
 fclean: clean                            												# force remove NAME
-			@$(RM) $(NAME) libft/*.o infile outfile
+			@$(RM) $(NAME) libft/*.o libft/*.a  infile outfile
 			@echo $(BGreen)√ Fclean Succeeded, Everything Has Been Removed!$(Color_Off);
 
 
