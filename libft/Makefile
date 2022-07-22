@@ -92,11 +92,11 @@ OBJS	   		 = $(SOURCES:.c=.o)       	 										# trasnforms all the ".c" files 
 # -------------------------------------------------------------------- RULES -------------------------------------------------------------------------------------------
 
 .c.o:		
-			$(CC) $(FLAGS) -c -I. $< -o $(<:.c=.o)
+			@$(CC) $(FLAGS) -c -I. $< -o $(<:.c=.o)
 
 		
 $(NAME):	$(OBJS)                                                                      
-			$(LIBC) $(NAME) $(OBJS)
+			@$(LIBC) $(NAME) $(OBJS)
 			@echo $(BGreen)Libft Has Been Compiled!$(Color_Off);
 
 all:	    $(NAME)

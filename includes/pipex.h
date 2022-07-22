@@ -6,21 +6,19 @@
 /*   By: dsoroko <dsoroko@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/21 10:52:14 by dsoroko           #+#    #+#             */
-/*   Updated: 2022/07/22 12:52:00 by dsoroko          ###   ########.fr       */
+/*   Updated: 2022/07/22 14:22:59 by dsoroko          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef PIPEX_H
 # define PIPEX_H
 
-# include <unistd.h>
+# include <unistd.h> 
 # include <sys/wait.h>
-# include <assert.h>
 # include <stdlib.h>
-# include <string.h>
 # include <fcntl.h>
 # include <stdio.h> 
-# include <sys/errno.h>
+# include <sys/types.h>
 # include "../libft/libft.h"
 
 void	errors(char *error);
