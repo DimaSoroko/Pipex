@@ -67,7 +67,7 @@ On_IWhite='\033[0;107m'   # White
 
 NAME			= pipex                 												# name of the programm
 
-CC				= gcc                        											# compiler
+CC				= gcc -g                        											# compiler
 
 FLAGS			= -Wall -Wextra -Werror   												# flags
 
@@ -85,12 +85,12 @@ HEADER			 = -Iincludes -I./libft.h 												# adds headers
 
 LIBFT 			 = make -C libft/														# compiling Libft
 
-NORM 			 =  @norminette 
+NORM 			 =  @norminette 														# checking the norm
 
 # -------------------------------------------------------------------- RULES -------------------------------------------------------------------------------------------
 
 .c.o:		
-			@$(CC) $(FLAGS) ${HEADER} -c $< -o $(<:.c=.o)
+			@$(CC) $(FLAGS) $(HEADER) -c $< -o $(<:.c=.o)
 
 all:	    $(NAME)   																	# will execute NAME rule
 		
@@ -116,6 +116,9 @@ fclean: clean                            												# force remove NAME
 re: fclean all 																			# rule to recompile MAKEFILE (will remove everything and allows to recompile again)
 			@echo $(BGreen)√$(Color_Off)$(BBlue)Recompile Succeeded!$(Color_Off);	
 
+val:		${NAME}																		# adds valgrind to check system leaks
+			@valgrind --leak-check=full ./$(NAME)
+
 # ----------------------------------------------------------------------PHONY --------------------------------------------------------------------------------------------
 
-.PHONY: all clean fclean re             											    # in phony section we need to include all used rules
+.PHONY: all clean fclean val re             											# in phony section we need to include all used rules
