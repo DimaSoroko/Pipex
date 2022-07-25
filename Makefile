@@ -102,7 +102,7 @@ $(NAME):	$(OBJS)
 			@echo $(BGreen)√$(Color_Off)$(BBlue)Infile Has Beed Created!$(Color_Off);
 			 @$(CC) $(OBJS) ./libft/libft.a -o $(NAME)
 			@echo $(BGreen)√$(Color_Off)$(BBlue)Pipex Has Been Compiled!$(Color_Off);
-			@echo $(BBlue)To Use Pipex :$(BGreen)./pipex infile \"command_1\" \"command_2\" outfile$(Color_Off);
+			@echo $(BBlue)To Use Pipex :$(BGreen)$(UGreen)./pipex infile \"command_1\" \"command_2\" outfile$(Color_Off);
 
 clean: 																					# remove all .o
 			@$(RM) $(OBJS) libft/*.o infile outfile
@@ -116,9 +116,10 @@ fclean: clean                            												# force remove NAME
 re: fclean all 																			# rule to recompile MAKEFILE (will remove everything and allows to recompile again)
 			@echo $(BGreen)√$(Color_Off)$(BBlue)Recompile Succeeded!$(Color_Off);	
 
-val:		${NAME}																		# adds valgrind to check system leaks
-			@valgrind --leak-check=full ./$(NAME)
+leaks:		${NAME}																		# adds valgrind to check system leaks
+			valgrind --leak-check=full ./$(NAME)
+			@echo $(BBlue)No Leaks Detected$(Color_Off);
 
 # ----------------------------------------------------------------------PHONY --------------------------------------------------------------------------------------------
 
-.PHONY: all clean fclean val re             											# in phony section we need to include all used rules
+.PHONY: all clean fclean leaks re             											# in phony section we need to include all used rules
