@@ -6,7 +6,7 @@
 /*   By: dsoroko <dsoroko@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/19 11:08:41 by dsoroko           #+#    #+#             */
-/*   Updated: 2022/04/27 18:33:29 by dsoroko          ###   ########.fr       */
+/*   Updated: 2022/07/26 09:20:55 by dsoroko          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 		str_len = len;
 	substr = malloc (sizeof(char) * (str_len + 1));
 	if (!substr)
-		return (NULL);
+		exit (1);
 	i = ((size_t)start);
 	j = 0;
 	while (i < ft_strlen(s) && j < len)

@@ -6,7 +6,7 @@
 /*   By: dsoroko <dsoroko@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/20 16:28:12 by dsoroko           #+#    #+#             */
-/*   Updated: 2022/04/27 18:33:29 by dsoroko          ###   ########.fr       */
+/*   Updated: 2022/07/26 09:20:10 by dsoroko          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,7 +75,7 @@ char	**ft_split(char const *s, char c)
 		return (NULL);
 	str = malloc(sizeof(char *) * (count_words(s, c) + 1));
 	if (!str)
-		return (NULL);
+		exit (1);
 	while (++i < count_words(s, c))
 	{
 		str[i] = find_next_word((char *)s, c, i + 1);
