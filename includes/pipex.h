@@ -6,7 +6,7 @@
 /*   By: dsoroko <dsoroko@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/21 10:52:14 by dsoroko           #+#    #+#             */
-/*   Updated: 2022/07/25 13:59:38 by dsoroko          ###   ########.fr       */
+/*   Updated: 2022/07/26 16:04:55 by dsoroko          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@
 */
 # include <unistd.h> 
 /*
-** free
+** free, exit
 */
 # include <stdlib.h>
 /*
