@@ -6,7 +6,7 @@
 /*   By: dsoroko <dsoroko@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/19 15:08:04 by dsoroko           #+#    #+#             */
-/*   Updated: 2022/07/22 12:51:40 by dsoroko          ###   ########.fr       */
+/*   Updated: 2022/07/26 16:06:36 by dsoroko          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 void	errors(char *error)
 {
 	perror(error);
-	exit(1);
+	exit(EXIT_FAILURE);
 }
 
 char	*search_path(char *cmd, char **envp)

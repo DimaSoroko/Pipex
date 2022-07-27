@@ -6,7 +6,7 @@
 /*   By: dsoroko <dsoroko@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/19 15:08:15 by dsoroko           #+#    #+#             */
-/*   Updated: 2022/07/22 12:48:57 by dsoroko          ###   ########.fr       */
+/*   Updated: 2022/07/26 16:09:02 by dsoroko          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,8 +20,10 @@ int	main(int argc, char **argv, char **envp)
 	if (argc == 5)
 	{
 		if (pipe(fd) == -1)
-			errors("Pipe");
+			errors("Pipe failed");
 		process_id = fork();
+		if (process_id == -1)
+			errors("Fork failed");
 		if (process_id == 0)
 			child(argv, envp, fd);
 		waitpid(process_id, NULL, 0);
